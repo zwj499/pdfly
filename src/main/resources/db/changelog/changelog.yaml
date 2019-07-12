@@ -1,0 +1,14 @@
+databaseChangeLog:
+#  - changeSet:
+#      id: 1
+#      author: zwj
+#      changes:
+#        - sqlFile:
+#            encoding: utf8
+#            path: classpath:db/changelog/init.sql
+  - include:
+      file: db/data/rel1/role.xml
+  - include:
+      file: db/data/rel1/user.xml
+  - include:
+      file: db/data/rel1/user_role.xml

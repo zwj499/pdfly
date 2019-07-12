@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="create.sequence" author="zwj">
+        <createSequence sequenceName="seq_user_role" startValue="1"></createSequence>
+    </changeSet>
+    <changeSet id="create.table" author="zwj">
+        <createTable tableName="user_role">
+            <column name="id" type="int">
+                <constraints primaryKey="true" nullable="false"></constraints>
+            </column>
+            <column name="user_id" type="int">
+                <constraints unique="true" nullable="false"></constraints>
+            </column>
+            <column name="role_id" type="int">
+                <constraints nullable="false"></constraints>
+            </column>
+            <column name="create_time" type="bigint"></column>
+            <column name="update_time" type="bigint"></column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

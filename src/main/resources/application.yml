@@ -1,0 +1,21 @@
+server:
+  port: 8500
+  servlet:
+    context-path: /pdfly
+spring:
+  application:
+    name: pdfly
+  liquibase:
+    enabled: true
+    check-change-log-location: true
+    change-log: classpath:db/changelog/changelog.yaml
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/mgdb?useUnicode=true&characterEncoding=utf-8
+    username: mgdb
+    password: 123456
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
